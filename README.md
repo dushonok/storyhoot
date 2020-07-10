@@ -1,0 +1,1 @@
+Requires PHP 7.0 and MySQL 5.5
