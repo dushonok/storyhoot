@@ -1,0 +1,15 @@
+[04-Oct-2019 07:59:42 UTC] PHP Notice:  Undefined variable: last_story_at in /home/vi35ps50blvv/public_html/testing/index.php on line 182
+[04-Oct-2019 08:30:44 UTC] PHP Notice:  Trying to get property 'items' of non-object in /home/vi35ps50blvv/public_html/testing/stories.php on line 17
+[04-Oct-2019 08:30:44 UTC] PHP Warning:  array_reverse() expects parameter 1 to be array, null given in /home/vi35ps50blvv/public_html/testing/stories.php on line 17
+[04-Oct-2019 08:30:44 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/vi35ps50blvv/public_html/testing/stories.php on line 18
+[04-Oct-2019 08:30:44 UTC] PHP Notice:  Trying to get property 'items' of non-object in /home/vi35ps50blvv/public_html/testing/stories.php on line 128
+[04-Oct-2019 08:30:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/vi35ps50blvv/public_html/testing/stories.php on line 128
+[04-Oct-2019 13:35:50 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/vi35ps50blvv/public_html/storyhoot/index.php on line 1327
+[04-Oct-2019 13:35:52 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/vi35ps50blvv/public_html/storyhoot/index.php on line 1327
+[04-Oct-2019 13:35:53 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/vi35ps50blvv/public_html/storyhoot/index.php on line 1327
+[04-Oct-2019 13:36:03 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/vi35ps50blvv/public_html/storyhoot/index.php on line 1327
+[04-Oct-2019 13:36:03 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/vi35ps50blvv/public_html/storyhoot/index.php on line 1327
+[04-Oct-2019 13:36:09 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/vi35ps50blvv/public_html/storyhoot/index.php on line 1327
+[04-Oct-2019 13:36:12 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/vi35ps50blvv/public_html/storyhoot/index.php on line 1327
+[04-Oct-2019 13:36:20 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/vi35ps50blvv/public_html/storyhoot/index.php on line 1327
+[04-Oct-2019 13:36:20 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/vi35ps50blvv/public_html/storyhoot/index.php on line 1327
