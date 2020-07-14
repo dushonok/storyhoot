@@ -7,6 +7,7 @@ A tool to download Insta users' stories
 - symfony latest
 
 # Installation
+Do install in in the server root folder ~
 
 <code>composer require symfony/symfony</code>
 
