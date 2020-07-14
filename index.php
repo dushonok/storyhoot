@@ -1355,9 +1355,7 @@ if(isset($_POST['username'])){
                                     		if(isset($server_message)) { 
                                     	?>
 	                                      <h1 class=" fullname">
-	                                      	<?= @$server_message; 
-	                                      	?>
-	                                      	
+	                                      	here should be the response from the server: <?= @$server_message;?>
 	                                      </h1> 
 	                                    <?php 
 	                                		} else { 
