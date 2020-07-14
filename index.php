@@ -27,7 +27,7 @@ if(isset($_POST['username'])){
 		    if(count($last_story_array) > 0){
 			    $last_story = $last_story_array[0];
 
-			    $takenAtDate = time() - $last_story->getTakenAtDate();
+			    $takenAtDate = abs(time() - $last_story->getTakenAtDate());
 			    $last_story_at = $takenAtDate/3600;
 		    }
 		}
@@ -1384,7 +1384,7 @@ if(isset($_POST['username'])){
        										} else {
        											echo  count(@$stories)." stories"; } 
        									?> </button>
-                                        </strong>, last story added <time>about <?= round(@$last_story_at) ?> hour ago</time></p>
+                                        </strong>, last story added <time>about <?= round(@$last_story_at) ?> hour(s) ago</time>, at <?=  @$takenAtDate ?> </p>
                                       <?php } ?>
                                     <?php } ?>      
                                   </p>
