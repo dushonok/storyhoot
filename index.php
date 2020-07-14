@@ -1323,31 +1323,61 @@ if(isset($_POST['username'])){
                                  <button type="submit" class="btn mb-2 mt-4" style="background-color: #aa1801; color: #fff;">Submit</button>
                             </form>
                             
-                           <div class="col-lg-6 col-centered mt-4" <?php if(isset($_POST['username']) && !isset($server_output->message)){ ?> style="border: 1px solid rgb(236, 227, 227);" <?php } ?>>
+                           <div class="col-lg-6 col-centered mt-4" 
+                           	  <?php 
+                           	  		if(isset($_POST['username']) && !isset($server_output->message)) { ?> 
+                           	  			style="border: 1px solid rgb(236, 227, 227);" 
+                           	  		<?php } 
+                           	  		?>
+                           	  >
+                              
                               <a class="user" href="/storyhoot/stories.php?id=<?= @$_POST['username']; ?>">
                                 <div class="mt-4">
-                                  <img src="<?= @$server_output->user->profile_pic_url ?>" alt="" class="profile img-responsive">
+                                  <img src="
+                                  		<?= @$server_output->user->profile_pic_url ?>
+                                  	" alt="" class="profile img-responsive">
                                 </div>
                                 <?php if(isset($_POST['username'])){ ?>
                                 <div class="mt-2">
                                   <div class="">
-                                    <h1 class=" username"><?= @$_POST['username']; ?></h1>
-                                    <?php if(isset($server_output->message)){ ?>
-                                      <h1 class=" fullname"><?= @$server_output->message; ?></h1> 
-                                    <?php }else{ ?>
-                                    <h1 class=" fullname"><?= @$server_output->user->full_name; ?></h1>
-                                    <?php } ?>
+                                    <h1 class=" username">
+                                    	<?= @$_POST['username']; ?>	
+                                    </h1>
+                                    	<?php 
+                                    		if(isset($server_output->message)) { 
+                                    	?>
+	                                      <h1 class=" fullname">
+	                                      	<?= @$server_output->message; 
+	                                      	?>
+	                                      	
+	                                      </h1> 
+	                                    <?php 
+	                                		} else { 
+	                                    ?>
+		                                    <h1 class=" fullname">
+		                                    	<?= @$server_output->user->full_name; 
+		                                    	?>
+		                                    	
+		                                    </h1>
+	                                    <?php 
+	                                		}
+	                                	?>
                                   </div>
                                   <p class="">
-                                    <?php if(!isset($server_output->message)){ ?>
-                                      <?php if(@$server_output->user->is_private==1){ ?>
-                                      <strong class="">This Account is Private</strong>
-                                      <?php }else{ ?>
-                                        <p class="lastup"><strong class="totalstories" style="
-   "><button type="button" style=" background-color: #aa1801;color: #fff;" class="btn ">
-       <?php  if(count(@$server_output->items) ==1  || count(@$server_output->items) ==0){ echo count(@$server_output->items)." story"; } else {
-       echo  count(@$server_output->items)." stories"; } ?> </button>
-                                            </strong>, last story added <time>about <?= round(@$last_story_at) ?> hour ago</time></p>
+                                    <?php if(!isset($server_output->message)) { 
+                                      	if(@$server_output->user->is_private==1) { ?>
+                                      	<strong class="">This Account is Private</strong>
+                                      <?php 
+                                  		} else { 
+                                  		?>
+                                        <p class="lastup"><strong class="totalstories" style=""><button type="button" style=" background-color: #aa1801;color: #fff;" class="btn ">
+       									<?php  
+       										if(count(@$server_output->items) ==1  || count(@$server_output->items) ==0) { 
+       											echo count(@$server_output->items)." story"; 
+       										} else {
+       											echo  count(@$server_output->items)." stories"; } 
+       									?> </button>
+                                        </strong>, last story added <time>about <?= round(@$last_story_at) ?> hour ago</time></p>
                                       <?php } ?>
                                     <?php } ?>      
                                   </p>
