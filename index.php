@@ -1364,7 +1364,7 @@ if(isset($_POST['username'])){
 	                                  		?>
 	                                        <p class="lastup"><strong class="totalstories" style=""><button type="button" style=" background-color: #aa1801;color: #fff;" class="btn ">
 	       									<?php
-	       										 
+
 	       										if(count(@$stories) ==1  || count(@$stories) ==0) { 
 	       											echo count(@$stories)." story"; 
 	       										} else {
@@ -1381,7 +1381,7 @@ if(isset($_POST['username'])){
 	                            <?php } else { ?>
 	                              
 	                              <h1 class=" fullname">
-	                                    here should be the response from the server: <?= @$server_message;?>
+	                                    <?= @$server_message;?>
 	                              </h1>
 
 	                            <?php } ?>
