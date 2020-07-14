@@ -1,33 +1,47 @@
 <?php
 
+use Instagram\Api;
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 
-if(isset($_GET['id'])){
-  $username = $_GET['id'];
-  $curl = curl_init();
-  curl_setopt_array($curl, [
-      CURLOPT_RETURNTRANSFER => 1,
-      CURLOPT_URL => "https://api.storiesig.com/stories/".$username
-  ]);
+require __DIR__ . '/../../../../master/vendor/autoload.php';
 
-  $server_output = curl_exec($curl);
 
-  curl_close ($curl);
+if(isset($_GET['username'])){
+  $username = $_GET['username'];
 
-  $server_output = json_decode($server_output,NULL);
-  $last_story_array = array_reverse($server_output->items);
-  if(count($last_story_array) > 0){
-    $last_story = $last_story_array[0];
+  $cachePool = new FilesystemAdapter('Instagram', 0, __DIR__ . '/../cache');
 
-    $purchasedToday = time() - $last_story->taken_at ;
-    $last_story_at = $purchasedToday/3600;
+  try {
+    $api = new Api($cachePool);
+    $api->login('milawoofdogs', '8hKU3aIWk0NE6QbbwwWlMqjCXYYhrYTs'); // mandatory
+
+    $profile = $api->getProfile($username); // we need instagram username
+    sleep(1);
+
+    $feedStories = $api->getStories($profile->getId());
+
+    $stories = $feedStories->getStories();
+
+    if (count($stories)) {
+      $last_story_array = array_reverse($stories);
+        if(count($last_story_array) > 0){
+          $last_story = $last_story_array[0];
+
+          $takenAtDate = abs(time() - $last_story->getTakenAtDate()->getTimestamp());
+          $last_story_at = $takenAtDate/3600;
+        }
+    }
+  } catch (InstagramException $e) {
+    $server_message = $e->getMessage();
+  } catch (CacheException $e) {
+    $server_message = $e->getMessage();
+  } catch (GuzzleHttp\Exception\ClientException $e) {
+    $server_message = "Account not found";
   }
-
-  //echo "<pre>";
-  //print_r($last_story->taken_at);die;
 }
 
-
 ?>
+
 <!doctype html>
 <html lang="en">
    <head>
@@ -1311,22 +1325,22 @@ if(isset($_GET['id'])){
 	
             <h1 style="margin:0;">StoryHoot</h1></div>
                            
-          <h2 class="mt-2">Instagram Stories of  <?= @$server_output->user->full_name; ?></h2>
+          <h2 class="mt-2">Instagram Stories of  <?= @$profile->getFullName(); ?></h2>
       
           
           <div class="" style="margin-top: 35px;">
             
               <div class="">
-                <img src="<?= @$server_output->user->profile_pic_url ?>" alt="" class="profile img-responsive">
+                <img src="<?= @$profile->getProfilePicture() ?>" alt="" class="profile img-responsive">
               </div>
               <?php if(isset($_GET['id'])){ ?>
               <div  style="margin-top: 1.25rem!important;">
                 <div class="">
                   <h2 class=" username"><?= @$_GET['id']; ?></h2>
-                  <h2 class=" fullname"><?= @$server_output->user->full_name; ?></h2>
+                  <h2 class=" fullname"><?= @$profile->getFullName(); ?></h2>
                 </div>
                 <p class="">
-                  <?php if(@$server_output->user->is_private==1){ ?>
+                  <?php if(@$profile->isPrivate()==1){ ?>
                   <strong class="">This Account is Private</strong>
                   <?php } ?>  
                 </p>
@@ -1335,29 +1349,29 @@ if(isset($_GET['id'])){
                 <div style="margin-bottom: 30px;">
 
                   <?php 
-                  foreach($server_output->items as $row){
-                    $purchasedToday = time() - $row->taken_at ;
+                  foreach($stories as $row){
+                    $purchasedToday = time() - $row->getTakenAtDate()->getTimestamp();
                     $story_taken_at = $purchasedToday/3600;
-                    if($row->media_type==1){
+                    if($row->getTypeName() == "GraphStoryImage"){
                       
                       //
                       echo '<div style="padding: 17px;">
-                          <img src="'.$row->image_versions2->candidates[0]->url.'" alt="" class="img-responsive story_img">
-                          <div class="date">'.round($story_taken_at).' hours ago'.'</div>
+                          <img src="'.$row->getDisplayUrl() .'" alt="" class="img-responsive story_img">
+                          <div class="date">'.round($story_taken_at).' hour(s) ago'.'</div>
                           <div class="download">
                             <a download="myimage" href="'.$row->image_versions2->candidates[0]->url.'" target="_blank" rel="nofollow noopener noreferrer" class="">DOWNLOAD</a></div>
                       </div>';
                        
-                    }if($row->media_type==2){
+                    }if($row->getTypeName() == "GraphStoryVideo"){
                         echo '<div style="padding: 17px;"><div align="center">
                               <video controls name="media" class="embed-responsive-item" style="width: 25%;">
-                                  <source src="'.$row->video_versions[0]->url.'" type="video/mp4">
+                                  <source src="'.$row->getDisplayUrl().'" type="video/mp4">
                               </video>
                           </div>
                           <div class="date">'.round($story_taken_at).' hours ago'.'</div>
                           <div class="download">
                           
-                          <a download="myvideo" href="'.$row->video_versions[0]->url.'" target="_blank" rel="nofollow noopener noreferrer" class="">DOWNLOAD</a></div>
+                          <a download="myvideo" href="'.$row->getDisplayUrl() .'" target="_blank" rel="nofollow noopener noreferrer" class="">DOWNLOAD</a></div>
                           </div>';
                           
                           
