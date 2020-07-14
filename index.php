@@ -1340,7 +1340,7 @@ if(isset($_POST['username'])){
                               <?php 
                            	  	if(isset($_POST['username']) && isset($profile)) { ?> 
                            	  
-	                              <a class="user" href="/storyhoot/stories.php?id=<?= @$_POST['username']; ?>">
+	                              <a class="user" href="/storyhoot/stories.php?username=<?= @$_POST['username']; ?>">
 	                                <div class="mt-4">
 	                                  <img src="<?= @$profile->getProfilePicture() ?>
 	                                  	" alt="" class="profile img-responsive">
