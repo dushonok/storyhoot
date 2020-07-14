@@ -1333,63 +1333,58 @@ if(isset($_POST['username'])){
                             
                            <div class="col-lg-6 col-centered mt-4" 
                            	  <?php 
-                           	  		if(isset($_POST['username']) && !isset($server_message)) { ?> 
-                           	  			style="border: 1px solid rgb(236, 227, 227);" 
-                           	  		<?php } 
-                           	  		?>
+                           	  	if(isset($_POST['username']) && isset($profile)) { ?> 
+                           	  		style="border: 1px solid rgb(236, 227, 227);" 
+                           	  	<?php } ?>
                            	  >
-                              
-                              <a class="user" href="/storyhoot/stories.php?id=<?= @$_POST['username']; ?>">
-                                <div class="mt-4">
-                                  <img src="
-                                  		<?= @$profile->getProfilePicture() ?>
-                                  	" alt="" class="profile img-responsive">
-                                </div>
-                                <?php if(isset($_POST['username'])){ ?>
-                                <div class="mt-2">
-                                  <div class="">
-                                    <h1 class=" username">
-                                    	<?= @$_POST['username']; ?>	
-                                    </h1>
-                                    	<?php 
-                                    		if(isset($server_message)) { 
-                                    	?>
-	                                      <h1 class=" fullname">
-	                                      	here should be the response from the server: <?= @$server_message;?>
-	                                      </h1> 
-	                                    <?php 
-	                                		} else { 
-	                                    ?>
-		                                    <h1 class=" fullname">
-		                                    	<?= @$profile->getFullName(); 
-		                                    	?>
-		                                    	
-		                                    </h1>
-	                                    <?php 
-	                                		}
-	                                	?>
-                                  </div>
-                                  <p class="">
-                                    <?php if(!isset($server_message)) { 
-                                      	if(@$profile->isPrivate()==1) { ?>
-                                      	<strong class="">This Account is Private</strong>
-                                      <?php 
-                                  		} else { 
-                                  		?>
-                                        <p class="lastup"><strong class="totalstories" style=""><button type="button" style=" background-color: #aa1801;color: #fff;" class="btn ">
-       									<?php  
-       										if(count(@$stories) ==1  || count(@$stories) ==0) { 
-       											echo count(@$stories)." story"; 
-       										} else {
-       											echo  count(@$stories)." stories"; } 
-       									?> </button>
-                                        </strong>, last story added <time>about <?= round(@$last_story_at) ?> hour(s) ago</time></p>
-                                      <?php } ?>
-                                    <?php } ?>      
-                                  </p>
-                                </div>
-                              <?php } ?>
-                              </a>
+                              <?php 
+                           	  	if(isset($_POST['username']) && isset($profile)) { ?> 
+                           	  
+	                              <a class="user" href="/storyhoot/stories.php?id=<?= @$_POST['username']; ?>">
+	                                <div class="mt-4">
+	                                  <img src="<?= @$profile->getProfilePicture() ?>
+	                                  	" alt="" class="profile img-responsive">
+	                                </div>
+	                                <?php if(isset($_POST['username'])){ ?>
+	                                <div class="mt-2">
+	                                  <div class="">
+	                                    <h1 class=" username">
+	                                    	<?= @$_POST['username']; ?>	
+	                                    </h1>
+	                                	<h1 class=" fullname">
+		                                    <?= @$profile->getFullName();?>
+		                                </h1>
+	                                  </div>
+	                                  <p class="">
+	                                    <?php if(!isset($server_message)) { 
+	                                      	if(@$profile->isPrivate()==1) { ?>
+	                                      	<strong class="">This Account is Private</strong>
+	                                      <?php 
+	                                  		} else { 
+	                                  		?>
+	                                        <p class="lastup"><strong class="totalstories" style=""><button type="button" style=" background-color: #aa1801;color: #fff;" class="btn ">
+	       									<?php
+	       										 
+	       										if(count(@$stories) ==1  || count(@$stories) ==0) { 
+	       											echo count(@$stories)." story"; 
+	       										} else {
+	       											echo  count(@$stories)." stories"; } 
+	       									?> </button>
+	                                        </strong>, last story added <time>about <?= round(@$last_story_at) ?> hour(s) ago</time></p>
+	                                      <?php } ?>
+	                                    <?php } ?>      
+	                                  </p>
+	                                </div>
+	                              <?php } ?>
+	                              </a>
+	                            
+	                            <?php } else { ?>
+	                              
+	                              <h1 class=" fullname">
+	                                    here should be the response from the server: <?= @$server_message;?>
+	                              </h1>
+
+	                            <?php } ?>
                             </div>
                             </div>
                           </div>
