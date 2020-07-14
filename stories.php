@@ -1342,9 +1342,17 @@ if(isset($_GET['username'])){
                   <h2 class=" fullname"><?= @$profile->getFullName(); ?></h2>
                 </div>
                 <p class="">
+                  <strong class="">
                   <?php if(@$profile->isPrivate()==1){ ?>
-                  <strong class="">This Account is Private</strong>
-                  <?php } ?>  
+                    This Account is Private
+                  <?php } else { 
+                      if(count(@$stories) ==1  || count(@$stories) ==0) { 
+                          echo count(@$stories)." story"; 
+                        } else {
+                        echo  count(@$stories)." stories"; 
+                      }
+                    } ?>  
+                  </strong>
                 </p>
               </div >
 
