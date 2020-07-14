@@ -34,7 +34,7 @@ if(isset($_POST['username'])){
 	}
 	else {
 		$server_message = "Account not found Nadya ;)";
-		$feedStories = array(new StoryMedia());
+		//$feedStories = array(new StoryMedia());
 	}
 
 }
