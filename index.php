@@ -1,34 +1,39 @@
 <?php
 
+use Instagram\Api;
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
+
+require __DIR__ . '/../../../../master/vendor/autoload.php';
+
 
 if(isset($_POST['username'])){
-  $username = $_POST['username'];
-  $curl = curl_init();
-  curl_setopt_array($curl, [
-      CURLOPT_RETURNTRANSFER => 1,
-      CURLOPT_URL => "https://api.storiesig.com/stories/".$username
-  ]);
+	$username = $_POST['username'];
 
-  $server_output = curl_exec($curl);
+	$cachePool = new FilesystemAdapter('Instagram', 0, __DIR__ . '/../cache');
 
-  curl_close ($curl);
+	$api = new Api($cachePool);
+	$api->login('milawoofdogs', '8hKU3aIWk0NE6QbbwwWlMqjCXYYhrYTs'); // mandatory
 
-  $server_output = json_decode($server_output,NULL);
+	$profile = $api->getProfile($username); // we need instagram username
+	sleep(1);
+	$feedStories = $api->getStories($profile->getId());
 
-  if(isset($server_output->items)){
-    $last_story_array = array_reverse($server_output->items);
-    if(count($last_story_array) > 0){
-      $last_story = $last_story_array[0];
+	$stories = $feedStories->getStories();
 
-      $purchasedToday = time() - $last_story->taken_at ;
-      $last_story_at = $purchasedToday/3600;
-    }
-  }
-    //
+	if (count($stories)) {
+		$last_story_array = array_reverse($stories);
+	    if(count($last_story_array) > 0){
+		    $last_story = $last_story_array[0];
+
+		    $takenAtDate = time() - $last_story->getTakenAtDate();
+		    $last_story_at = $takenAtDate/3600;
+	    }
+	}
+
 }
 
-
 ?>
+
 <!doctype html>
 <html lang="en">
    <head>
