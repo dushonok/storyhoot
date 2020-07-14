@@ -1346,10 +1346,10 @@ if(isset($_GET['username'])){
                   <?php if(@$profile->isPrivate()==1){ ?>
                     This Account is Private
                   <?php } else { 
-                      if(count(@$stories) ==1  || count(@$stories) ==0) { 
-                          echo count(@$stories)." story"; 
-                        } else {
-                        echo  count(@$stories)." stories"; 
+                      if(count(@$stories) == 1) { 
+                          echo count(@$stories)." story available"; 
+                      } else {
+                        echo  count(@$stories)." stories available"; 
                       }
                     } ?>  
                   </strong>

@@ -1365,12 +1365,13 @@ if(isset($_POST['username'])){
 	                                        <p class="lastup"><strong class="totalstories" style=""><button type="button" style=" background-color: #aa1801;color: #fff;" class="btn ">
 	       									<?php
 
-	       										if(count(@$stories) ==1  || count(@$stories) ==0) { 
+	       										if(count(@$stories) == 1) { 
 	       											echo count(@$stories)." story"; 
 	       										} else {
 	       											echo  count(@$stories)." stories"; } 
 	       									?> </button>
-	                                        </strong>, last story added <time>about <?= round(@$last_story_at) ?> hour(s) ago</time></p>
+	                                        </strong></p> 
+	                                        <p>Last story added <time>about <?= round(@$last_story_at) ?> hour(s) ago</time></p>
 	                                      <?php } ?>
 	                                    <?php } ?>      
 	                                  </p>
