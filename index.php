@@ -11,13 +11,13 @@ if(isset($_POST['username'])){
 
 	$cachePool = new FilesystemAdapter('Instagram', 0, __DIR__ . '/../cache');
 
-	$api = new Api($cachePool);
-	$api->login('milawoofdogs', '8hKU3aIWk0NE6QbbwwWlMqjCXYYhrYTs'); // mandatory
+	try {
+		$api = new Api($cachePool);
+		$api->login('milawoofdogs', '8hKU3aIWk0NE6QbbwwWlMqjCXYYhrYTs'); // mandatory
 
-	$profile = $api->getProfile($username); // we need instagram username
-	sleep(1);
+		$profile = $api->getProfile($username); // we need instagram username
+		sleep(1);
 
-	if (isset($profile)) {
 		$feedStories = $api->getStories($profile->getId());
 
 		$stories = $feedStories->getStories();
@@ -31,12 +31,11 @@ if(isset($_POST['username'])){
 			    $last_story_at = $takenAtDate/3600;
 		    }
 		}
+	} catch (InstagramException $e) {
+		$server_message = $e->getMessage();
+	} catch (CacheException $e) {
+		$server_message = $e->getMessage();
 	}
-	else {
-		$server_message = "Account not found Nadya ;)";
-		//$feedStories = array(new StoryMedia());
-	}
-
 }
 
 ?>
