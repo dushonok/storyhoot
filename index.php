@@ -1334,7 +1334,7 @@ if(isset($_POST['username'])){
                               <a class="user" href="/storyhoot/stories.php?id=<?= @$_POST['username']; ?>">
                                 <div class="mt-4">
                                   <img src="
-                                  		<?= @$profile->profilePicture ?>
+                                  		<?= @$profile->getProfilePicture() ?>
                                   	" alt="" class="profile img-responsive">
                                 </div>
                                 <?php if(isset($_POST['username'])){ ?>
@@ -1355,7 +1355,7 @@ if(isset($_POST['username'])){
 	                                		} else { 
 	                                    ?>
 		                                    <h1 class=" fullname">
-		                                    	<?= @$profile->fullName; 
+		                                    	<?= @$profile->getFullName(); 
 		                                    	?>
 		                                    	
 		                                    </h1>
@@ -1365,7 +1365,7 @@ if(isset($_POST['username'])){
                                   </div>
                                   <p class="">
                                     <?php if(!isset($server_message)) { 
-                                      	if(@$profile->private==1) { ?>
+                                      	if(@$profile->isPrivate()==1) { ?>
                                       	<strong class="">This Account is Private</strong>
                                       <?php 
                                   		} else { 
