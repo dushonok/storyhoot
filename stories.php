@@ -1373,7 +1373,7 @@ if(isset($_GET['username'])){
                                   <source src="'.$row->getVideoResources()[0]->src .'" type="video/mp4">
                               </video>
                           </div>
-                          <div class="date">'.round($story_taken_at).' hours ago'.'</div>
+                          <div class="date">'.round($story_taken_at).' hour(s) ago'.'</div>
                           <div class="download">
                           
                           <a download="myvideo" href="'.$row->getVideoResources()[0]->src .'" target="_blank" rel="nofollow noopener noreferrer" class="">DOWNLOAD</a></div>
