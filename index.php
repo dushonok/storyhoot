@@ -1384,7 +1384,7 @@ if(isset($_POST['username'])){
        										} else {
        											echo  count(@$stories)." stories"; } 
        									?> </button>
-                                        </strong>, last story added <time>about <?= round(@$last_story_at) ?> hour(s) ago</time>, at <?=  @$takenAtDate ?> </p>
+                                        </strong>, last story added <time>about <?= round(@$last_story_at) ?> hour(s) ago</time></p>
                                       <?php } ?>
                                     <?php } ?>      
                                   </p>
