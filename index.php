@@ -1325,7 +1325,7 @@ if(isset($_POST['username'])){
                             
                            <div class="col-lg-6 col-centered mt-4" 
                            	  <?php 
-                           	  		if(isset($_POST['username']) && !isset($server_output->message)) { ?> 
+                           	  		if(isset($_POST['username']) && !isset($server_message)) { ?> 
                            	  			style="border: 1px solid rgb(236, 227, 227);" 
                            	  		<?php } 
                            	  		?>
@@ -1334,7 +1334,7 @@ if(isset($_POST['username'])){
                               <a class="user" href="/storyhoot/stories.php?id=<?= @$_POST['username']; ?>">
                                 <div class="mt-4">
                                   <img src="
-                                  		<?= @$server_output->user->profile_pic_url ?>
+                                  		<?= @$profile->profilePicture ?>
                                   	" alt="" class="profile img-responsive">
                                 </div>
                                 <?php if(isset($_POST['username'])){ ?>
@@ -1344,10 +1344,10 @@ if(isset($_POST['username'])){
                                     	<?= @$_POST['username']; ?>	
                                     </h1>
                                     	<?php 
-                                    		if(isset($server_output->message)) { 
+                                    		if(isset($server_message)) { 
                                     	?>
 	                                      <h1 class=" fullname">
-	                                      	<?= @$server_output->message; 
+	                                      	<?= @$server_message; 
 	                                      	?>
 	                                      	
 	                                      </h1> 
@@ -1355,7 +1355,7 @@ if(isset($_POST['username'])){
 	                                		} else { 
 	                                    ?>
 		                                    <h1 class=" fullname">
-		                                    	<?= @$server_output->user->full_name; 
+		                                    	<?= @$profile->fullName; 
 		                                    	?>
 		                                    	
 		                                    </h1>
@@ -1364,18 +1364,18 @@ if(isset($_POST['username'])){
 	                                	?>
                                   </div>
                                   <p class="">
-                                    <?php if(!isset($server_output->message)) { 
-                                      	if(@$server_output->user->is_private==1) { ?>
+                                    <?php if(!isset($server_message)) { 
+                                      	if(@$profile->private==1) { ?>
                                       	<strong class="">This Account is Private</strong>
                                       <?php 
                                   		} else { 
                                   		?>
                                         <p class="lastup"><strong class="totalstories" style=""><button type="button" style=" background-color: #aa1801;color: #fff;" class="btn ">
        									<?php  
-       										if(count(@$server_output->items) ==1  || count(@$server_output->items) ==0) { 
-       											echo count(@$server_output->items)." story"; 
+       										if(count(@$stories) ==1  || count(@$stories) ==0) { 
+       											echo count(@$stories)." story"; 
        										} else {
-       											echo  count(@$server_output->items)." stories"; } 
+       											echo  count(@$stories)." stories"; } 
        									?> </button>
                                         </strong>, last story added <time>about <?= round(@$last_story_at) ?> hour ago</time></p>
                                       <?php } ?>
