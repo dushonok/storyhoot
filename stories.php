@@ -1349,9 +1349,15 @@ if(isset($_GET['username'])){
                 <div style="margin-bottom: 30px;">
 
                   <?php 
+
+                  echo "Debug: Got " . count($stories) . " of stories";
+
                   foreach($stories as $row){
                     $purchasedToday = time() - $row->getTakenAtDate()->getTimestamp();
                     $story_taken_at = $purchasedToday/3600;
+
+                    echo "Debug: This story is " . count($row->getTypeName()) . " with URL " . $row->getDisplayUrl();
+
                     if($row->getTypeName() == "GraphStoryImage"){
                       
                       //
@@ -1359,7 +1365,7 @@ if(isset($_GET['username'])){
                           <img src="'.$row->getDisplayUrl() .'" alt="" class="img-responsive story_img">
                           <div class="date">'.round($story_taken_at).' hour(s) ago'.'</div>
                           <div class="download">
-                            <a download="myimage" href="'.$row->image_versions2->candidates[0]->url.'" target="_blank" rel="nofollow noopener noreferrer" class="">DOWNLOAD</a></div>
+                            <a download="myimage" href="'.$row->getDisplayUrl().'" target="_blank" rel="nofollow noopener noreferrer" class="">DOWNLOAD</a></div>
                       </div>';
                        
                     }if($row->getTypeName() == "GraphStoryVideo"){
