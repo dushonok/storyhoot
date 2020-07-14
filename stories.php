@@ -1333,7 +1333,9 @@ if(isset($_GET['username'])){
               <div class="">
                 <img src="<?= @$profile->getProfilePicture() ?>" alt="" class="profile img-responsive">
               </div>
-              <?php if(isset($_GET['id'])){ ?>
+              
+              <?php if(isset($_GET['username'])) { ?>
+
               <div  style="margin-top: 1.25rem!important;">
                 <div class="">
                   <h2 class=" username"><?= @$_GET['id']; ?></h2>
