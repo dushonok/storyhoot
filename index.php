@@ -16,18 +16,25 @@ if(isset($_POST['username'])){
 
 	$profile = $api->getProfile($username); // we need instagram username
 	sleep(1);
-	$feedStories = $api->getStories($profile->getId());
 
-	$stories = $feedStories->getStories();
+	if (isset($profile)) {
+		$feedStories = $api->getStories($profile->getId());
 
-	if (count($stories)) {
-		$last_story_array = array_reverse($stories);
-	    if(count($last_story_array) > 0){
-		    $last_story = $last_story_array[0];
+		$stories = $feedStories->getStories();
 
-		    $takenAtDate = time() - $last_story->getTakenAtDate();
-		    $last_story_at = $takenAtDate/3600;
-	    }
+		if (count($stories)) {
+			$last_story_array = array_reverse($stories);
+		    if(count($last_story_array) > 0){
+			    $last_story = $last_story_array[0];
+
+			    $takenAtDate = time() - $last_story->getTakenAtDate();
+			    $last_story_at = $takenAtDate/3600;
+		    }
+		}
+	}
+	else {
+		$server_message = "Account not found Nadya ;)";
+		$feedStories = array(new StoryMedia());
 	}
 
 }
