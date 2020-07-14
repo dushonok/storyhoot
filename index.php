@@ -35,6 +35,8 @@ if(isset($_POST['username'])){
 		$server_message = $e->getMessage();
 	} catch (CacheException $e) {
 		$server_message = $e->getMessage();
+	} catch (GuzzleHttp/Exception/ClientException $e) {
+		$server_message = "Account not found";
 	}
 }
 
