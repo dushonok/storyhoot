@@ -1362,7 +1362,7 @@ if(isset($_POST['username'])){
 	                                      <?php 
 	                                  		} else { 
 	                                  		?>
-	                                        <p class="lastup"><strong class="totalstories" style=""><button type="button" style=" background-color: #aa1801;color: #fff;" class="btn ">
+	                                        <p class="lastup"><strong class="totalstories" style=""><button type="button" style=" background-color: #aa1801;color: #fff;" class="btn ">See 
 	       									<?php
 	       										@$stories_count = count(@$stories);
 	       										if(@$stories_count == 1) { 
@@ -1373,7 +1373,7 @@ if(isset($_POST['username'])){
 	                                        </strong>
 	                                        <?php
 	                                        	if (@$stories_count > 0) {
-	                                        		echo "<br>Last story added <time>about" . round(@$last_story_at) . " hour(s) ago</time>";
+	                                        		echo "<br><br>Last story added <time>about" . round(@$last_story_at) . " hour(s) ago</time>";
 	                                        	}
 	                                        ?>
 	                                        </p>
