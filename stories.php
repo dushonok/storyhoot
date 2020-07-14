@@ -1357,7 +1357,7 @@ if(isset($_GET['username'])){
                     $story_taken_at = $purchasedToday/3600;
 
                     echo "Debug: This story is " . $row->getTypeName() . " with Display URL " . $row->getDisplayUrl() . "<br>";
-                    echo "Debug: It has " . count($row->getVideoResources()) . " and 1st one is " . $row->getVideoResources()[0] . "<br>";
+                    echo "Debug: It has " . count($row->getVideoResources()) . " and 1st one is " . $row->getVideoResources()[0]->src . "<br>";
 
                     if($row->getTypeName() == "GraphStoryImage"){
                       
@@ -1372,13 +1372,13 @@ if(isset($_GET['username'])){
                     }if($row->getTypeName() == "GraphStoryVideo"){
                         echo '<div style="padding: 17px;"><div align="center">
                               <video controls name="media" class="embed-responsive-item" style="width: 25%;">
-                                  <source src="'.$row->getVideoResources()[0].'" type="video/mp4">
+                                  <source src="'.$row->getVideoResources()[0]->src .'" type="video/mp4">
                               </video>
                           </div>
                           <div class="date">'.round($story_taken_at).' hours ago'.'</div>
                           <div class="download">
                           
-                          <a download="myvideo" href="'.$row->getVideoResources()[0] .'" target="_blank" rel="nofollow noopener noreferrer" class="">DOWNLOAD</a></div>
+                          <a download="myvideo" href="'.$row->getVideoResources()[0]->src .'" target="_blank" rel="nofollow noopener noreferrer" class="">DOWNLOAD</a></div>
                           </div>';
                           
                           
