@@ -1338,7 +1338,7 @@ if(isset($_GET['username'])){
 
               <div  style="margin-top: 1.25rem!important;">
                 <div class="">
-                  <h2 class=" username"><?= @$_GET['id']; ?></h2>
+                  <h2 class=" username"><?= @$_GET['username']; ?></h2>
                   <h2 class=" fullname"><?= @$profile->getFullName(); ?></h2>
                 </div>
                 <p class="">
