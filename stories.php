@@ -1353,11 +1353,9 @@ if(isset($_GET['username'])){
                   <?php 
 
                   foreach($stories as $row){
+                    
                     $purchasedToday = time() - $row->getTakenAtDate()->getTimestamp();
                     $story_taken_at = $purchasedToday/3600;
-
-                    echo "Debug: This story is " . $row->getTypeName() . " with Display URL " . $row->getDisplayUrl() . "<br>";
-                    echo "Debug: It has " . count($row->getVideoResources()) . " and 1st one is " . $row->getVideoResources()[0]->src . "<br>";
 
                     if($row->getTypeName() == "GraphStoryImage"){
                       
