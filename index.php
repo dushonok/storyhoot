@@ -1373,7 +1373,7 @@ if(isset($_POST['username'])){
 	                                        </strong>
 	                                        <?php
 	                                        	if (@$stories_count > 0) {
-	                                        		echo "<br><br>Last story added <time>about" . round(@$last_story_at) . " hour(s) ago</time>";
+	                                        		echo "<br><br>Last story added <time>about " . round(@$last_story_at) . " hour(s) ago</time>";
 	                                        	}
 	                                        ?>
 	                                        </p>
