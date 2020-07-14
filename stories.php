@@ -1333,7 +1333,7 @@ if(isset($_GET['username'])){
               <div class="">
                 <img src="<?= @$profile->getProfilePicture() ?>" alt="" class="profile img-responsive">
               </div>
-              
+
               <?php if(isset($_GET['username'])) { ?>
 
               <div  style="margin-top: 1.25rem!important;">
@@ -1352,13 +1352,12 @@ if(isset($_GET['username'])){
 
                   <?php 
 
-                  echo "Debug: Got " . count($stories) . " of stories";
-
                   foreach($stories as $row){
                     $purchasedToday = time() - $row->getTakenAtDate()->getTimestamp();
                     $story_taken_at = $purchasedToday/3600;
 
-                    echo "Debug: This story is " . count($row->getTypeName()) . " with URL " . $row->getDisplayUrl();
+                    echo "Debug: This story is " . $row->getTypeName() . " with Display URL " . $row->getDisplayUrl() . "<br>";
+                    echo "Debug: It has " . count($row->getVideoResources()) . " and 1st one is " . $row->getVideoResources()[0] . "<br>";
 
                     if($row->getTypeName() == "GraphStoryImage"){
                       
@@ -1373,13 +1372,13 @@ if(isset($_GET['username'])){
                     }if($row->getTypeName() == "GraphStoryVideo"){
                         echo '<div style="padding: 17px;"><div align="center">
                               <video controls name="media" class="embed-responsive-item" style="width: 25%;">
-                                  <source src="'.$row->getDisplayUrl().'" type="video/mp4">
+                                  <source src="'.$row->getVideoResources()[0].'" type="video/mp4">
                               </video>
                           </div>
                           <div class="date">'.round($story_taken_at).' hours ago'.'</div>
                           <div class="download">
                           
-                          <a download="myvideo" href="'.$row->getDisplayUrl() .'" target="_blank" rel="nofollow noopener noreferrer" class="">DOWNLOAD</a></div>
+                          <a download="myvideo" href="'.$row->getVideoResources()[0] .'" target="_blank" rel="nofollow noopener noreferrer" class="">DOWNLOAD</a></div>
                           </div>';
                           
                           
