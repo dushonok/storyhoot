@@ -27,7 +27,7 @@ if(isset($_POST['username'])){
 		    if(count($last_story_array) > 0){
 			    $last_story = $last_story_array[0];
 
-			    $takenAtDate = abs(time() - $last_story->getTakenAtDate());
+			    $takenAtDate = abs(time() - $last_story->getTakenAtDate()->getTimestamp());
 			    $last_story_at = $takenAtDate/3600;
 		    }
 		}
