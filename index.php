@@ -71,7 +71,10 @@ if(isset($_POST['username'])){
       <link rel="alternate" type="application/rss+xml" title="TechUntold » Comments Feed" href="https://www.techuntold.com/comments/feed/">
       <!-- This site uses the Google Analytics by MonsterInsights plugin v7.9.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
       <script src="https://www.techuntold.com/wp-includes/js/wp-emoji-release.min.js?ver=5744ee63ad0c9ec27c73d8e30397e7cf" type="text/javascript" defer=""></script>
-	  <script data-ad-client="ca-pub-8860864035967182" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+      <!-- TU StoryHoot Display Ad Adsense one-line (the ad is below) -->
+  	  <script data-ad-client="ca-pub-8860864035967182" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      
       <style type="text/css">
          img.wp-smiley,
          img.emoji {
@@ -86,6 +89,8 @@ if(isset($_POST['username'])){
          padding: 0 !important;
          }
       </style>
+      
+
       <link rel="stylesheet" id="structured-content-frontend-css" href="https://www.techuntold.com/wp-content/plugins/structured-content/dist/blocks.style.css?ver=1.0.0" type="text/css" media="all">
       <link rel="stylesheet" id="wp-block-library-css" href="https://www.techuntold.com/wp-includes/css/dist/block-library/style.min.css?ver=5744ee63ad0c9ec27c73d8e30397e7cf" type="text/css" media="all">
       <link rel="stylesheet" id="dashicons-css" href="https://www.techuntold.com/wp-includes/css/dashicons.min.css?ver=5744ee63ad0c9ec27c73d8e30397e7cf" type="text/css" media="all">
@@ -1301,18 +1306,19 @@ if(isset($_POST['username'])){
                             <div class="">
                             <h1>StoryHoot</h1>
 							
-							<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-								<!-- TU StoryHoot Display Ad -->
-								<ins class="adsbygoogle"
-									 style="display:block"
-									 data-ad-client="ca-pub-8860864035967182"
-									 data-ad-slot="9187278358"
-									 data-ad-format="auto"
-									 data-full-width-responsive="true"></ins>
-								<script>
-									 (adsbygoogle = window.adsbygoogle || []).push({});
-							</script>
-							
+              							<!-- TU StoryHoot Adsense Display Ad beginning -->
+                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              								<ins class="adsbygoogle"
+              									 style="display:block"
+              									 data-ad-client="ca-pub-8860864035967182"
+              									 data-ad-slot="9187278358"
+              									 data-ad-format="auto"
+              									 data-full-width-responsive="true"></ins>
+              								<script>
+              									 (adsbygoogle = window.adsbygoogle || []).push({});
+              							</script>
+              							<!-- TU StoryHoot Adsense Display Ad end -->
+
                             <h2 class="mt-2">Instagram Story Downloader</h2>
 
                             <form  method="post">

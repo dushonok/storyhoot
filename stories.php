@@ -71,6 +71,10 @@ if(isset($_GET['username'])){
       <link rel="alternate" type="application/rss+xml" title="TechUntold » Comments Feed" href="https://www.techuntold.com/comments/feed/">
       <!-- This site uses the Google Analytics by MonsterInsights plugin v7.9.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
       <script src="https://www.techuntold.com/wp-includes/js/wp-emoji-release.min.js?ver=5744ee63ad0c9ec27c73d8e30397e7cf" type="text/javascript" defer=""></script>
+
+      <!-- TU StoryHoot Display Ad Adsense one-line (the ad is below) -->
+      <script data-ad-client="ca-pub-8860864035967182" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      
       <style type="text/css">
          img.wp-smiley,
          img.emoji {
@@ -1323,7 +1327,20 @@ if(isset($_GET['username'])){
 	
 	
 	
-            <h1 style="margin:0;">StoryHoot</h1></div>
+          <h1 style="margin:0;">StoryHoot</h1></div>
+
+          <!-- TU StoryHoot Adsense Display Ad beginning -->
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-8860864035967182"
+               data-ad-slot="9187278358"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+            <script>
+               (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+          <!-- TU StoryHoot Adsense Display Ad end -->
                            
           <h2 class="mt-2">Instagram Stories of  <?= @$profile->getFullName(); ?></h2>
       
