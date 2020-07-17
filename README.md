@@ -17,4 +17,8 @@ Do install in in the server root folder ~
 <code>require __DIR__ . '/../../../../master/vendor/autoload.php';</code>*
 
 
-
+*Enable SSH for GitHub PROPERLY on Windows*
+<code>
+eval $(ssh-agent)
+ssh-add /c/Users/nadez/.ssh/id_rsa
+</code>
