@@ -1419,6 +1419,9 @@ if(isset($_GET['username'])){
             <?php } ?>
             
           </div>
+          <!-- Ezoic - storyhoot_bottom_of_page - bottom_of_page -->
+          <div id="ezoic-pub-ad-placeholder-120"> </div>
+          <!-- End Ezoic - storyhoot_bottom_of_page - bottom_of_page -->
          </div>
       </div>
     

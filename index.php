@@ -1550,9 +1550,15 @@ if(isset($_POST['username'])){
               
             </div>
 
-            <!--./row-fluid-->
+
+          <!--./row-fluid-->
 
   <!--./row-fluid--></div></div> <!-- ./block --></div></div></div></div>
+          
+          <!-- Ezoic - storyhoot_bottom_of_page - bottom_of_page -->
+          <div id="ezoic-pub-ad-placeholder-120"> </div>
+          <!-- End Ezoic - storyhoot_bottom_of_page - bottom_of_page -->
+          
           <div id="td_uid_8_5d97223a8377f" class="tdc-row">
             <div class="vc_row td_uid_11_5d97223a837c7_rand  wpb_row td-pb-row">
 
