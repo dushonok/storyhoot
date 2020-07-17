@@ -1360,11 +1360,11 @@ if (isset($username)) {
                 <img src="<?= @$profile->getProfilePicture() ?>" alt="" class="profile img-responsive">
               </div>
 
-              <?php if(isset($username)) { ?>
+              <?php if(isset($profile)) { ?>
 
               <div  style="margin-top: 1.25rem!important;">
                 <div class="">
-                  <h2 class=" username"><?= @$username; ?></h2>
+                  <h2 class=" username"><?= @$profile->getUserName(); ?></h2>
                   <h2 class=" fullname"><?= @$profile->getFullName(); ?></h2>
                 </div>
                 <p class="">
