@@ -8,7 +8,12 @@ require __DIR__ . '/../../../../master/vendor/autoload.php';
 
 if(isset($_GET['username'])){
   $username = $_GET['username'];
+}
+else if (isset($_GET['id'])){
+  $username = $_GET['id'];
+}
 
+if (isset($username)) {
   $cachePool = new FilesystemAdapter('Instagram', 0, __DIR__ . '/../cache');
 
   try {
