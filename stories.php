@@ -1329,17 +1329,21 @@ if(isset($_GET['username'])){
 	
           <h1 style="margin:0;">StoryHoot</h1></div>
 
-          <!-- TU StoryHoot Adsense Display Ad beginning -->
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-8860864035967182"
-               data-ad-slot="9187278358"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-            <script>
-               (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
+          <!-- TU StoryHoot Adsense Display Ad beginning - Ezoic wrapped -->
+            <!-- Ezoic - storyhoot_under_page_title - under_page_title -->
+            <div id="ezoic-pub-ad-placeholder-119"> 
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle"
+                   style="display:block"
+                   data-ad-client="ca-pub-8860864035967182"
+                   data-ad-slot="9187278358"
+                   data-ad-format="auto"
+                   data-full-width-responsive="true"></ins>
+                <script>
+                   (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            </div>
+            <!-- End Ezoic - storyhoot_under_page_title - under_page_title -->
           <!-- TU StoryHoot Adsense Display Ad end -->
                            
           <h2 class="mt-2">Instagram Stories of  <?= @$profile->getFullName(); ?></h2>
