@@ -45,7 +45,7 @@ if(isset($_POST['username'])){
 <!doctype html>
 <html lang="en">
    <head>
-      <title>StoryHoot | TechUntold</title>
+      <title>StoryHoot (now fixed!) | TechUntold</title>
       <meta charset="UTF-8">
       
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
