@@ -12,9 +12,10 @@ if(isset($_POST['username'])){
 	$cachePool = new FilesystemAdapter('Instagram', 0, __DIR__ . '/../cache');
 
   $instaAccounts = array(
-    array('username' => 'milawoofdogs', 'password' => '8hKU3aIWk0NE6QbbwwWlMqjCXYYhrYTs'),
-    array('username' => '18buzzplants', 'password' => '1X0Mr6nL!bm#s!Q'),
-    array('username' => 'diymiloslava18', 'password' => 'hIp9epQnN8G$iD@'),
+    //array('username' => 'milawoofdogs',    'password' => '8hKU3aIWk0NE6QbbwwWlMqjCXYYhrYTs'),
+    array('username' => '18buzzplants',    'password' => '1X0Mr6nL!bm#s!Q'),
+    array('username' => 'diymiloslava18',  'password' => 'hIp9epQnN8G$iD@'),
+    array('username' => 'theSlavabunnies', 'password' => '^i8BYn%tU1Q%XXG4'),
   );  
   $index = rand(0, count($instaAccounts)-1);
   $instaAccount = $instaAccounts[$index];
