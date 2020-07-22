@@ -11,9 +11,16 @@ if(isset($_POST['username'])){
 
 	$cachePool = new FilesystemAdapter('Instagram', 0, __DIR__ . '/../cache');
 
+  $instaAccounts = array(
+    array('username' => 'milawoofdogs', 'password' => '8hKU3aIWk0NE6QbbwwWlMqjCXYYhrYTs'),
+    array('username' => '18buzzplants', 'password' => '1X0Mr6nL!bm#s!Q')
+  );
+  $index = rand(0,1);
+  $instaAccount = $instaAccounts[$index];
+
 	try {
 		$api = new Api($cachePool);
-		$api->login('milawoofdogs', '8hKU3aIWk0NE6QbbwwWlMqjCXYYhrYTs'); // mandatory
+		$api->login($instaAccount['username'], $instaAccount['password']); // mandatory
 
 		$profile = $api->getProfile($username); // we need instagram username
 		sleep(3);
