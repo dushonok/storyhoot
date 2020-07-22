@@ -21,7 +21,7 @@ if (isset($username)) {
     $api->login('milawoofdogs', '8hKU3aIWk0NE6QbbwwWlMqjCXYYhrYTs'); // mandatory
 
     $profile = $api->getProfile($username); // we need instagram username
-    sleep(1);
+    sleep(3);
 
     $feedStories = $api->getStories($profile->getId());
 
