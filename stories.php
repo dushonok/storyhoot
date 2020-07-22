@@ -18,7 +18,8 @@ if (isset($username)) {
 
    $instaAccounts = array(
     //array('username' => 'milawoofdogs', 'password' => '8hKU3aIWk0NE6QbbwwWlMqjCXYYhrYTs'),
-    array('username' => '18buzzplants', 'password' => '1X0Mr6nL!bm#s!Q')
+    array('username' => '18buzzplants',   'password' => '1X0Mr6nL!bm#s!Q'),
+    array('username' => 'diymiloslava18', 'password' => 'hIp9epQnN8G$iD@'),
   );  
   $index = rand(0, count($instaAccounts)-1);
   $instaAccount = $instaAccounts[$index];
