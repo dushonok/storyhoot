@@ -16,6 +16,9 @@ if(isset($_POST['username'])){
     array('username' => '18buzzplants',    'password' => '1X0Mr6nL!bm#s!Q'),
     array('username' => 'diymiloslava18',  'password' => 'hIp9epQnN8G$iD@'),
     array('username' => 'theSlavabunnies', 'password' => '^i8BYn%tU1Q%XXG4'),
+    array('username' => 'rosie.tabby.mine', 'password' => '@a5Fu7XtfYdTgO'),
+    array('username' => 'wolfnick.not',     'password' => '@a5Fu7XtfYdTgO'),
+    array('username' => 'thebunniesstyle',  'password' => 'IzUD9@MYGrLV0#wv'),
   );  
   $index = rand(0, count($instaAccounts)-1);
   $instaAccount = $instaAccounts[$index];
