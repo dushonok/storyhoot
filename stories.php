@@ -18,12 +18,12 @@ if (isset($username)) {
 
    $instaAccounts = array(
     //array('username' => 'milawoofdogs',    'password' => '8hKU3aIWk0NE6QbbwwWlMqjCXYYhrYTs'),
-    array('username' => '18buzzplants',     'password' => '1X0Mr6nL!bm#s!Q'),
-    array('username' => 'diymiloslava18',   'password' => 'hIp9epQnN8G$iD@'),
-    array('username' => 'theSlavabunnies',  'password' => '^i8BYn%tU1Q%XXG4'),
-    array('username' => 'rosie.tabby.mine', 'password' => '@a5Fu7XtfYdTgO'),
-    array('username' => 'wolfnick.not',     'password' => '@a5Fu7XtfYdTgO'),
-    array('username' => 'thebunniesstyle',  'password' => 'IzUD9@MYGrLV0#wv'),
+    array('username' => '18buzzplants',    'password' => 'G*o4l61Up45jBi'),
+    array('username' => 'diymiloslava18',  'password' => 'g!7vuWs07fOD8H'),
+    array('username' => 'theSlavabunnies', 'password' => '2Yrt^$m0NS4u6D'),
+    array('username' => 'rosie.tabby.mine', 'password' => 't3$gA@G6f74rU&'),
+    array('username' => 'wolfnick.not',     'password' => '6kp56*vpE4QCyd'),
+    array('username' => 'thebunniesstyle',  'password' => 'wrH2X4nytQh%0l'),
     
   );  
   $index = rand(0, count($instaAccounts)-1);
