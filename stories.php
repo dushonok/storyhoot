@@ -6,12 +6,7 @@ use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 require __DIR__ . '/../../../../master/vendor/autoload.php';
 
 
-if(isset($_GET['username'])){
-  $username = $_GET['username'];
-}
-else if (isset($_GET['id'])){
-  $username = $_GET['id'];
-}
+
 
 if (isset($username)) {
   $cachePool = new FilesystemAdapter('Instagram', 0, __DIR__ . '/../cache');
@@ -1364,79 +1359,8 @@ if (isset($username)) {
             <!-- End Ezoic - storyhoot_under_page_title - under_page_title -->
           <!-- TU StoryHoot Adsense Display Ad end -->
                            
-          <h2 class="mt-2">Instagram Stories of  <?= @$profile->getFullName(); ?></h2>
+          <h2 class="mt-2">Instagram Stories temporarily under maintenace</h2>
       
-          
-          <div class="" style="margin-top: 35px;">
-            
-              <div class="">
-                <img src="<?= @$profile->getProfilePicture() ?>" alt="" class="profile img-responsive">
-              </div>
-
-              <?php if(isset($profile)) { ?>
-
-              <div  style="margin-top: 1.25rem!important;">
-                <div class="">
-                  <h2 class=" username"><?= @$profile->getUserName(); ?></h2>
-                  <h2 class=" fullname"><?= @$profile->getFullName(); ?></h2>
-                </div>
-                <p class="">
-                  <strong class="">
-                  <?php if(@$profile->isPrivate()==1){ ?>
-                    This Account is Private
-                  <?php } else { 
-                      if(count(@$stories) == 1) { 
-                          echo count(@$stories)." story available"; 
-                      } else {
-                        echo  count(@$stories)." stories available"; 
-                      }
-                    } ?>  
-                  </strong>
-                </p>
-              </div >
-
-                <div style="margin-bottom: 30px;">
-
-                  <?php 
-
-                  foreach($stories as $row){
-                    
-                    $purchasedToday = time() - $row->getTakenAtDate()->getTimestamp();
-                    $story_taken_at = $purchasedToday/3600;
-
-                    if($row->getTypeName() == "GraphStoryImage"){
-                      
-                      //
-                      echo '<div style="padding: 17px;">
-                          <img src="'.$row->getDisplayUrl() .'" alt="" class="img-responsive story_img">
-                          <div class="date">'.round($story_taken_at).' hour(s) ago'.'</div>
-                          <div class="download">
-                            <a download="myimage" href="'.$row->getDisplayUrl().'" target="_blank" rel="nofollow noopener noreferrer" class="">DOWNLOAD</a></div>
-                      </div>';
-                       
-                    }if($row->getTypeName() == "GraphStoryVideo"){
-                        echo '<div style="padding: 17px;"><div align="center">
-                              <video controls name="media" class="embed-responsive-item" style="width: 25%;">
-                                  <source src="'.$row->getVideoResources()[0]->src .'" type="video/mp4">
-                              </video>
-                          </div>
-                          <div class="date">'.round($story_taken_at).' hour(s) ago'.'</div>
-                          <div class="download">
-                          
-                          <a download="myvideo" href="'.$row->getVideoResources()[0]->src .'" target="_blank" rel="nofollow noopener noreferrer" class="">DOWNLOAD</a></div>
-                          </div>';
-                          
-                          
-                    }
-                    
-                  }
-                  ?>
-                  
-                </div>
-              
-            <?php } ?>
-            
-          </div>
           <!-- Ezoic - storyhoot_bottom_of_page - bottom_of_page -->
           <div id="ezoic-pub-ad-placeholder-120"> </div>
           <!-- End Ezoic - storyhoot_bottom_of_page - bottom_of_page -->

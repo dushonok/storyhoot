@@ -6,52 +6,7 @@ use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 require __DIR__ . '/../../../../master/vendor/autoload.php';
 
 
-if(isset($_POST['username'])){
-	$username = $_POST['username'];
 
-	$cachePool = new FilesystemAdapter('Instagram', 0, __DIR__ . '/../cache');
-
-  $instaAccounts = array(
-    //array('username' => 'milawoofdogs',    'password' => '8hKU3aIWk0NE6QbbwwWlMqjCXYYhrYTs'),
-    
-    array('username' => 'vr.intocars',    'password' => 'F91Ic%qP&nAd42'),
-    array('username' => 'fix.thisthat',    'password' => 'C!hbMt#Z6Z7Y*v'),
-    array('username' => 'rosie.tabby.adopted',    'password' => 't3$gA@G6f74rU&'),
-    array('username' => 'wolfnick.here',    'password' => '6kp56*vpE4QCyd'),
-    array('username' => 'thefunniesstyle',    'password' => 'wrH2X4nytQh%0l'),
-    array('username' => 'diymiloslava181',    'password' => 'g!7vuWs07fOD8H'),
-  );  
-  $index = rand(0, count($instaAccounts)-1);
-  $instaAccount = $instaAccounts[$index];
-
-	try {
-		$api = new Api($cachePool);
-		$api->login($instaAccount['username'], $instaAccount['password']); // mandatory
-
-		$profile = $api->getProfile($username); // we need instagram username
-		sleep(3);
-
-		$feedStories = $api->getStories($profile->getId());
-
-		$stories = $feedStories->getStories();
-
-		if (count($stories)) {
-			$last_story_array = array_reverse($stories);
-		    if(count($last_story_array) > 0){
-			    $last_story = $last_story_array[0];
-
-			    $takenAtDate = abs(time() - $last_story->getTakenAtDate()->getTimestamp());
-			    $last_story_at = $takenAtDate/3600;
-		    }
-		}
-	} catch (InstagramException $e) {
-		$server_message = $e->getMessage();
-	} catch (CacheException $e) {
-		$server_message = $e->getMessage();
-	} catch (GuzzleHttp\Exception\ClientException $e) {
-		$server_message = "Account not found";
-	}
-}
 
 ?>
 
@@ -1351,7 +1306,7 @@ if(isset($_POST['username'])){
 
                                       <!-- /.col-lg-6 -->
                                 </div>
-                                 <button type="submit" class="btn mb-2 mt-4" style="background-color: #aa1801; color: #fff;">Submit</button>
+                                 <button type="submit" class="btn mb-2 mt-4" style="background-color: #aa1801; color: #fff;" disabled>Temporarily Under Maintenance</button>
                             </form>
                             
                            <div class="col-lg-6 col-centered mt-4" 
