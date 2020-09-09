@@ -1308,7 +1308,10 @@ require __DIR__ . '/../../../../master/vendor/autoload.php';
                                 </div>
                                  <button type="submit" class="btn mb-2 mt-4" style="background-color: #aa1801; color: #fff;" disabled>Temporarily Under Maintenance</button>
                             </form>
-                            
+                           
+                           <div class="col-lg-6 col-centered mt-4" >
+                              <div class="mt-4">Please check back later</div>
+                           </div> 
                            <div class="col-lg-6 col-centered mt-4" 
                            	  <?php 
                            	  	if(isset($_POST['username']) && isset($profile)) { ?> 

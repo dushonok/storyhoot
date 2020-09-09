@@ -1359,7 +1359,7 @@ if (isset($username)) {
             <!-- End Ezoic - storyhoot_under_page_title - under_page_title -->
           <!-- TU StoryHoot Adsense Display Ad end -->
                            
-          <h2 class="mt-2">Instagram Stories temporarily under maintenace</h2>
+          <h2 class="mt-2">Instagram Stories temporarily under maintenace. Please check back later!</h2>
       
           <!-- Ezoic - storyhoot_bottom_of_page - bottom_of_page -->
           <div id="ezoic-pub-ad-placeholder-120"> </div>
